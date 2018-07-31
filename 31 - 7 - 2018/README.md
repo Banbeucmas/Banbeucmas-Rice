@@ -1,8 +1,11 @@
 # Information
-
 This is my Ricing on 31 - 7 - 2018, first time getting used to i3. All suggestion for improving my rice is welcome
 
+** Additional Information **
+* The blur effect is achieved by using a fork of compton provided by Tryone144: https://github.com/tryone144/compton
+
 I will post my rice screenshot here but here is an imgur link just in case: https://imgur.com/a/9Lk3DOT
+
 # Screenshot
 
 
