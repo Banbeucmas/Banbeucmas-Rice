@@ -1,6 +1,7 @@
 # Information
 This is my Ricing on 31 - 7 - 2018, first time getting used to i3. All suggestion for improving my rice is 
 welcome
+Switched from i3 to bspwm, seem better for me lol
 
 **Themes**
 * [Numix-Darkblue](https://aur.archlinux.org/packages/numix-themes-darkblue/)
