@@ -19,9 +19,8 @@ Switched from i3 to bspwm, seem better for me lol
 I will post my rice screenshot here but here is an imgur link just in case: https://imgur.com/a/BOx2l9y
 
 # Screenshot
-
-![Neofetch](https://i.imgur.com/35WDkoV.png)
+![Dirty](https://i.imgur.com/PEBFpQ0.png)
 
 ![Clean](https://i.imgur.com/GVr2Ua3.png)
 
-![Dirty](https://i.imgur.com/PEBFpQ0.png)
+![Neofetch](https://i.imgur.com/35WDkoV.png)
