@@ -1,0 +1,312 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #262626
+background-alt = #282828
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+white = #fff
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+underline = #cc241d
+
+[bar/bottom]
+monitor = eDP1
+width = 100%
+height = 28
+offset-y = 0
+offset-x = 0
+bottom = true
+wm-restack = i3
+override-redirect = true
+border-size = 0
+border-color = #00000000
+background = #00000000
+foreground = ${colors.foreground}
+
+tray-position = left
+tray-padding = 3
+tray-detached = true
+tray-transparent = true
+tray-maxsize = 16
+tray-background = #cc292929
+tray-offset-x = 0
+tray-offset-y = 0
+;tray-padding = 0
+tray-scale = 1.0
+
+
+[bar/menu]
+monitor = eDP1
+width = 95%
+height = 30
+offset-y = 7
+offset-x = 33
+radius = 0.0
+fixed-center=true
+bottom = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #eee
+
+border-size = 0
+border-color = #00000000
+
+padding-left=0
+padding-right=0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "fira mono:size=9:style=Regular;1"
+font-1 = "fira code:size=9:style=Regular;1"
+font-2 = unifont:fontformat=truetype:size=18:antialias=true;0
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=9;1"
+font-4 = "Font Awesome 5 Free:style=Regular:pixelsize=9;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=9;1"
+
+modules-left = date pulseaudio battery xwindow
+modules-center = bspwm 
+modules-right =  wlan eth powermenu
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+format-padding = 2
+label = %title%
+label-font=1
+label-maxlen = 40
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+
+label-focused = %icon% 
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.underline}
+label-focused-padding = 1.3
+
+label-occupied = %icon%
+label-occupied-background = ${colors.background}
+label-occupied-padding = 1.3
+
+
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1.3
+
+label-empty = %icon%
+label-empty-background = ${colors.background}
+label-empty-padding = 1.3
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label>
+label =  %%percentage%
+label-padding = 0
+label-underline = ${colors.underline}
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/wlan]
+type = internal/network
+interface = wlp6s0
+interval = 3.0
+
+format-connected-padding = 1
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = ${colors.underline}
+label-connected = %essid%
+
+format-disconnected =  <label-disconnected>
+format-disconnected-underline = ${colors.underline}
+format-disconnected-padding = 1
+label-disconnected = No Connection
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.white}
+
+[module/eth]
+type = internal/network
+interface = enp7s0
+interval = 3.0
+
+format-connected-underline = ${colors.underline}
+format-connected =  <label-connected> 
+format-connected-foreground = ${colors.white}
+format-connected-padding = 1
+label-connected = %local_ip%
+
+format-disconnected =  <label-disconnected>
+format-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-underline = ${colors.underline}
+format-disconnected-padding = 1
+label-disconnected = "No Connection"
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.white}
+format-underline = ${colors.underline}
+
+label = %date% %time% 
+
+format-padding = 1
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+format-volume-padding = 1
+format-volume-underline = ${colors.underline}
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted =  Muted
+format-muted-padding = 1
+format-muted-underline = ${colors.underline}
+label-muted-foreground = #666
+
+bar-volume-width = 5
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging>  <label-charging>
+format-charging-underline = ${colors.underline}
+
+format-discharging = <animation-discharging>  <label-discharging>
+format-discharging-underline = ${colors.underline}
+
+format-full-prefix = ""
+format-full-prefix-foreground = ${colors.white}
+format-full-underline = ${colors.underline}
+
+format-full-padding = 1
+format-discharging-padding = 1
+format-charging-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-foreground = ${colors.white}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-foreground = ${colors.white}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-foreground = ${colors.white}
+animation-discharging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-padding = 1
+format-background = ${colors.underline}
+
+label-open = 
+;label-open-foreground = ${colors.secondary}
+label-close = 
+;label-close-foreground = ${colors.secondary}
+label-separator = " | "
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = Logout
+menu-0-0-exec = xfce4-session-logout
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
