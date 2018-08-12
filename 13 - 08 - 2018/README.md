@@ -1,5 +1,6 @@
 # Information
 This is my Ricing on 13 - 8 - 2018, using bspwm
+
 **Additional Information**
 * If somebody doesn't know about those fancy effect in the terminal (You should already know it) then it is [pipe.sh](https://github.com/pipeseroni/pipes.sh), [cmatrix](https://github.com/abishekvashok/cmatrix), [tty-clock](https://github.com/xorg62/tty-clock)
 * [Nemo](https://github.com/linuxmint/nemo) was used as the File Manager
