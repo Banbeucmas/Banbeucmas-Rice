@@ -1,8 +1,6 @@
 # Information
 This is my Ricing on 07 - 11 - 2018, using bspwm
 
-P.S: It is really the last one with slight modifcation. Doesn't chance much
-
 **Additional Information**
 * If somebody doesn't know about those fancy effect in the terminal (You should already know it) then it is [pipe.sh](https://github.com/pipeseroni/pipes.sh), [cmatrix](https://github.com/abishekvashok/cmatrix), [cli-visualizer](https://github.com/dpayne/cli-visualizer)
 * [Nemo](https://github.com/linuxmint/nemo) was used as the File Manager
